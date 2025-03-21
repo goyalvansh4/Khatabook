@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read File</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <h1 class="text-white text-2xl">Khatabook</h1>
+      <a class="text-white text-sm" href="/add">Create New</a>
+    </div>
+  </nav>
+
+  <div class="container mx-auto mt-8">
+    <h1 class="text-xl font-bold mb-4">File Content</h1>
+    <% content.split(',').forEach((item) => { %>
+      <p class="mb-2"><%= item %></p>
+    <% }); %>
+  </div>
+</body>
+</html>

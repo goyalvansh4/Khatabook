@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100">
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <h1 class="text-white text-2xl">Khatabook</h1>
+      <a class="text-white text-sm" href="/add">Create New</a>
+    </div>
+  </nav>
+  <div class="container px-2 max-w-md mt-8">
+    <% if(files.length > 0) { %>
+      <ul class="space-y-4">
+        <% files.forEach(function(file) { %>
+          <li class="bg-white p-4 rounded shadow flex items-center justify-between">
+            <span><%= file.replace('.txt', '') %></span>
+            <div class="space-x-2">
+              <a href="/view/<%= file %>" class="text-green-500 hover:text-green-700">View</a>
+              <a href="/edit/<%= file %>" class="text-blue-500 hover:text-blue-700"><i class="fa-solid fa-pencil"></i></a>
+              <a href="/delete/<%= file %>" class="text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></a>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p class="text-red-500">No Files Found</p>
+    <% } %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit File</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="bg-blue-600 p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <h1 class="text-white text-2xl">Khatabook</h1>
+      <a class="text-white text-sm" href="/add">Create New</a>
+    </div>
+  </nav>
+  <div class="container mx-auto max-w-md mt-8">
+    <form action="/update/<%= file %>" method="POST">
+      <div class="mb-4">
+        <label for="content" class="block text-sm font-medium text-gray-700">Content</label>
+        <textarea name="content" id="content" rows="5" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"><%= content %></textarea>
+      </div>
+      <div class="flex justify-end">
+        <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Update</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
